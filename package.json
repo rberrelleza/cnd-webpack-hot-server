@@ -2,12 +2,14 @@
   "name": "cnd-webpack-hot-server",
   "version": "0.0.1",
   "description": "Webpack hot reloading for cloud native development (CND).",
-  "bin": "bin/cnd-webpack-hot-server.js",
+  "bin": {
+    "cnd-webpack-hot-server": "./cnd-webpack-hot-server.js"
+  },
   "homepage": "https://github.com/okteto/cnd-webpack-hot-server",
   "repository": "https://github.com/okteto/cnd-webpack-hot-server",
   "license": "Apache-2.0",
   "files": [
-    "bin"
+    "cnd-webpack-hot-server.js"
   ],
   "keywords": [
     "cnd",

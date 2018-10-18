@@ -20,12 +20,12 @@ yarn add cnd-webpack-hot-server --dev
 If your `webpack.config.js` is on the root directory of your CND environment, run:
 
 ```console
-cnd exec node_modules/bin/cnd-webpack-hot-server.js
+cnd exec node_modules/cnd-webpack-hot-server/cnd-webpack-hot-server.js
 ```
 
 You can also the path of your config file:
 ```console
-cnd exec node_modules/bin/cnd-webpack-hot-server.js --config path/to/webpack.config.js
+cnd exec -- node_modules/cnd-webpack-hot-server/cnd-webpack-hot-server.js --config path/to/webpack.config.js
 ```
 
 [See CND](https://github.com/okteto/cnd)
@@ -38,7 +38,7 @@ script as such:
 
 ```json
 "scripts": {
-  "watch": "node_modules/bin/cnd-webpack-hot-server.js"
+  "watch": "node node_modules/cnd-webpack-hot-server/cnd-webpack-hot-server.js"
 }
 ```
 
@@ -50,7 +50,8 @@ cnd exec yarn run watch
 
 ### The Result
 
-This will start a server instance and begin listening for connections from `localhost` on the default port `35729`.
+This will start a server instance in your container and begin listening for connections from 
+`localhost` on the default port `35729`.
 
 ## License
 
