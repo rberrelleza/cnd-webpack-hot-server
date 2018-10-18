@@ -55,7 +55,7 @@ This will start a server instance in your container and begin listening for conn
 
 ## License
 
-#### [MIT](./LICENSE)
+#### [Apache-2.0](./LICENSE)
 
 [cnd-url]: https://github.com/okteto/cnd
 [okteto-url]: https://okteto.com
