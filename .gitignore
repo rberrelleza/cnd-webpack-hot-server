@@ -1,0 +1,6 @@
+.DS_Store
+npm-debug.log
+client
+coverage
+ssl/*.pem
+node_modules
