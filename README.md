@@ -1,9 +1,9 @@
 # cnd-webpack-hot-server
  
-Enable webpack hot reloading for cloud native development (CND). This enables other tools like
+Enable webpack hot reloading for [cloud native development (CND)][cnd-url]. This enables other tools like
 [React Hot Loader](https://github.com/gaearon/react-hot-loader) to tweak React components in real time in your cloud native environment.
 
-It uses the popular express middlewares [webpack-dev-middleware][middleware-url] and [webpack-hot-middleware][middleware-url] under the hood.
+It uses the popular express middlewares [webpack-dev-middleware][dev-middleware-url] and [webpack-hot-middleware][hot-middleware-url] under the hood.
 
 ## Getting Started
 
@@ -28,7 +28,7 @@ You can also the path of your config file:
 cnd exec -- node_modules/cnd-webpack-hot-server/cnd-webpack-hot-server.js --config path/to/webpack.config.js
 ```
 
-[See CND](https://github.com/okteto/cnd)
+[See CND][cnd-url]
 
 ### With NPM Scripts
 
@@ -56,3 +56,8 @@ This will start a server instance in your container and begin listening for conn
 ## License
 
 #### [MIT](./LICENSE)
+
+[cnd-url]: https://github.com/okteto/cnd
+[okteto-url]: https://okteto.com
+[dev-middleware-url]: https://github.com/webpack/webpack-dev-middleware
+[hot-middleware-url]: https://github.com/webpack/webpack-hot-middleware
