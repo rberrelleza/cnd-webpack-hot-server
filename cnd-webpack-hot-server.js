@@ -6,9 +6,10 @@ const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const commander = require('commander');
 const path = require('path');
+const package = require('./package.json');
 
 commander
-  .version('0.0.1')
+  .version(package.version)
   .option('-c, --config [type]', 'webpack configuration file')
   .option('-p, --port [type]', 'server port number (default: 35729)')
   .parse(process.argv);
