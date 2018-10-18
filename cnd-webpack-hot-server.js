@@ -14,7 +14,7 @@ commander
   .parse(process.argv);
 
 // Load Webpack config file.
-const configFile = path.join(__dirname, commander.config || './webpack.config.js');
+const configFile = path.join(process.cwd(), commander.config || './webpack.config.js');
 const config = require(configFile);
 
 const app = express();
