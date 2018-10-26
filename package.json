@@ -1,6 +1,6 @@
 {
   "name": "cnd-webpack-hot-server",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Webpack hot reloading for cloud native development (CND).",
   "bin": {
     "cnd-webpack-hot-server": "./cnd-webpack-hot-server.js"
