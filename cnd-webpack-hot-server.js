@@ -39,10 +39,11 @@ if (env == 'development') {
   // Set express middlewares. 
   // TODO: Try to disable serving all webpack compiled files and just run compiler.
   router.use(webpackDevMiddleware(compiler, { 
+    hot: true,
+    logTime: true,
     noInfo: true, 
     publicPath: config.output.publicPath,
-    hot: true,
-    writeToDisk: true,
+    writeToDisk: true
   }));
   console.info("==> Webpack watching.");
 
