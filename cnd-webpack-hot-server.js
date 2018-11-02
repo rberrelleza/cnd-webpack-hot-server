@@ -12,6 +12,7 @@ commander
   .version(package.version)
   .option('-c, --config [type]', 'webpack configuration file')
   .option('-p, --port [type]', 'server port number (default: 35729)')
+  .option('-b, --base-path [type]', 'base path where hmr will be listening to (default: \'/\')')
   .parse(process.argv);
 
 // Load Webpack config file.
@@ -23,15 +24,15 @@ const router = express.Router();
 const env = app.get('env');
 const port = commander.port || 35729;
 
-const CND_BASE_PATH = '/cnd';
-const HMR_PATH = '__webpack_hmr';
+const cndBasePath = commander.basePath || '';
+const hmrPath = path.join('/', cndBasePath, '/__webpack_hmr');
 
 if (env == 'development') {
   // Inject HMR client code.
   config.entry = [
     'react-hot-loader/patch',
     // Configure client code to point to CND base path.
-    `webpack-hot-middleware/client?path=${CND_BASE_PATH}/${HMR_PATH}&overlay=true`
+    `webpack-hot-middleware/client?path=${hmrPath}&overlay=true`
   ].concat(config.entry);
 
   const compiler = webpack(config);
@@ -48,7 +49,7 @@ if (env == 'development') {
   console.info("==> Webpack watching.");
 
   router.use(webpackHotMiddleware(compiler, {
-    path: '/cnd/__webpack_hmr'
+    path: hmrPath
   }));
   console.info("==> Runing Hot Reload Middleware.");
 
@@ -62,7 +63,7 @@ app.listen(port, (error) => {
     console.error(error);
   } else {
     console.info(
-      `==> HMR server listening on http://localhost:${port}${CND_BASE_PATH}/${HMR_PATH}.`
+      `==> HMR server listening on http://localhost:${port}${hmrPath}.`
     );
   }
 })
