@@ -32,6 +32,6 @@
     "morgan": "^1.9.1",
     "webpack": "^4.21.0",
     "webpack-dev-middleware": "^3.4.0",
-    "webpack-hot-middleware": "^2.24.3"
+    "webpack-hot-middleware": "rlamana/webpack-hot-middleware"
   }
 }

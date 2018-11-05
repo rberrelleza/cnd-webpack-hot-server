@@ -27,12 +27,17 @@ const port = commander.port || 35729;
 const cndBasePath = commander.basePath || '';
 const hmrPath = path.join('/', cndBasePath, '/__webpack_hmr');
 
+// Configure client code to point to CND base path.
+const clientOptions = `path=${hmrPath}&overlay=true`;
+if (commander.port) {
+  clientOptions += `&port=${port}`;
+}
+
 if (env == 'development') {
   // Inject HMR client code.
   config.entry = [
     'react-hot-loader/patch',
-    // Configure client code to point to CND base path.
-    `webpack-hot-middleware/client?path=${hmrPath}&overlay=true`
+    `webpack-hot-middleware/client?${clientOptions}`
   ].concat(config.entry);
 
   const compiler = webpack(config);
@@ -66,4 +71,4 @@ app.listen(port, (error) => {
       `==> HMR server listening on http://localhost:${port}${hmrPath}.`
     );
   }
-})
+});
