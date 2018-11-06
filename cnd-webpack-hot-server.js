@@ -28,8 +28,8 @@ const cndBasePath = commander.basePath || '';
 const hmrPath = path.join('/', cndBasePath, '/__webpack_hmr');
 
 // Configure client code to point to CND base path.
-const clientOptions = `path=${hmrPath}&overlay=true`;
-if (commander.port) {
+let clientOptions = `path=${hmrPath}&overlay=true`;
+if (port) {
   clientOptions += `&port=${port}`;
 }
 
